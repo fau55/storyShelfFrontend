@@ -1,0 +1,172 @@
+<div class="row">
+  <div class="col text-end">
+    <button
+      class="btn btn-primary py-2"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      + Add Product
+    </button>
+  </div>
+</div>
+<div class="product">
+  <div class="content my-3" *ngFor="let item of productArray">
+    <img src="{{ item.productImages[2].image_url }}" />
+    <h3>{{ item.productName }}</h3>
+    <h6>Rs.{{ item.productPrice }}</h6>
+    <p>
+      <!-- {{item.productDescription}} -->
+    </p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-4">
+            <p>Images to Upload:</p>
+            <div *ngIf="showPreviewImage">
+              <div *ngFor="let imageUrl of showPreviewImages">
+                <img
+                  [src]="imageUrl"
+                  alt="Preview"
+                  style="width: 150px; height: 150px"
+                />
+              </div>
+            </div>
+            <upload-dropzone
+              [options]="options"
+              [onUpdate]="onUpdate"
+              [width]="width"
+              [height]="height"
+              upload
+              multi="false"
+            >
+            </upload-dropzone>
+          </div>
+          <div class="col">
+            <!-- Product Name -->
+            <div class="row">
+              <div class="col">
+                <p>Product Name:</p>
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="productName"
+                  placeholder="Enter product name"
+                />
+              </div>
+            </div>
+
+            <!-- Product Price -->
+            <div class="row">
+              <div class="col">
+                <p>Product Price:</p>
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="productPrice"
+                  placeholder="Enter product price"
+                />
+              </div>
+            </div>
+
+            <!-- Product Description -->
+            <div class="row">
+              <div class="col">
+                <p>Product Description:</p>
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="productDescription"
+                  placeholder="Enter product description"
+                />
+              </div>
+            </div>
+
+            <!-- Product Category (Select Dropdown) -->
+            <div class="row">
+              <div class="col">
+                <p>Product Category:</p>
+              </div>
+              <div class="col">
+                <select class="form-control" [(ngModel)]="productCategory">
+                  <option
+                    *ngFor="let category of categories"
+                    [value]="category"
+                  >
+                    {{ category }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <!-- In Stock -->
+            <div class="row">
+              <div class="col">
+                <p>In Stock:</p>
+              </div>
+              <div class="col">
+                <input
+                  type="number"
+                  class="form-control"
+                  [(ngModel)]="inStock"
+                  placeholder="Enter stock quantity"
+                />
+              </div>
+            </div>
+
+            <!-- Product Tags (Select Dropdown for Tags) -->
+            <div class="row">
+              <div class="col">
+                <p>Product Tags:</p>
+              </div>
+              <div class="col">
+                <select class="form-control" [(ngModel)]="productTag" multiple>
+                  <option *ngFor="let tag of tags" [value]="tag">
+                    {{ tag }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-success ms-1" (click)="onSave()">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

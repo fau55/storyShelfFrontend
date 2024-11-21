@@ -1,0 +1,65 @@
+<!-- <p>admin-page works!</p> -->
+<div class="side-menu">
+  <div class="brand-name">
+    <a routerLink="/">
+      <h1>Story<span>Shelf</span></h1>
+    </a>
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/admin/admin-page/admin-dashboard"
+        ><img src="../../assets/icons/dashboard1.png" alt="" />&nbsp;<span
+        ></span> Dashboard</a
+      >
+    </li>
+    <li>
+      <a routerLink="/admin/admin-page/all-user"
+        ><img src="../../assets/icons/user (1).png" alt="" />&nbsp;<span
+        ></span> Users</a
+      >
+    </li>
+    <li>
+      <a routerLink="/admin/admin-page/all-products"
+        ><img src="../../assets/icons/open-book.png" alt="" />&nbsp;<span
+        ></span> Products</a
+      >
+    </li>
+    <li>
+      <a routerLink="admin/admin-page/admin-dashboard"
+        ><img src="../../assets/icons/settings.png" alt="" />&nbsp;<span
+        ></span> Settings</a
+      >
+    </li>
+    <li>
+      <a routerLink="admin/admin-page"
+        ><img src="../../assets/icons/exit.png" alt="" />&nbsp;<span></span> Log
+        Out</a
+      >
+    </li>
+  </ul>
+</div>
+<div class="container">
+  <div class="header">
+    <div class="nav">
+      <div class="search">
+        <input type="text" placeholder="Search.." />
+        <button type="submit">
+          <img src="../../assets/mag.png" alt="" />
+        </button>
+      </div>
+      <div class="user">
+        <div class="img-case">
+          <img src="../../assets/user2.png" alt="user image" />
+        </div>
+        <p>Admin</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+

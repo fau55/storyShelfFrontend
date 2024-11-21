@@ -1,0 +1,163 @@
+<section class="body">
+  <div class="container">
+    <h1 class="form-title">Registration</h1>
+    <form [formGroup]="UserForm" (ngSubmit)="registerUser()">
+      <div class="main-user-info">
+        <div class="user-input-box">
+          <label for="fullName">First Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter First Name"
+            formControlName="firstName"
+          />
+          <div
+            *ngIf="
+              UserForm.get('firstName')?.invalid &&
+              (UserForm.get('firstName')?.dirty ||
+                UserForm.get('firstName')?.touched)
+            "
+          >
+            <p style="color: red">First Name is required</p>
+          </div>
+        </div>
+        <div class="user-input-box">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter Last Name"
+            formControlName="lastName"
+          />
+          <div
+            *ngIf="
+              UserForm.get('lastName')?.invalid &&
+              (UserForm.get('lastName')?.dirty ||
+                UserForm.get('lastName')?.touched)
+            "
+          >
+            <p style="color: red">Last Name is required</p>
+          </div>
+        </div>
+        <div class="user-input-box">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              UserForm.get('email')?.invalid &&
+              (UserForm.get('email')?.dirty || UserForm.get('email')?.touched)
+            "
+          >
+            <p style="color: red">Valid Email is required</p>
+          </div>
+        </div>
+        <div class="user-input-box">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="Enter Phone Number"
+            formControlName="phone"
+          />
+          <div
+            *ngIf="
+              UserForm.get('phone')?.invalid &&
+              (UserForm.get('phone')?.dirty || UserForm.get('phone')?.touched)
+            "
+          >
+            <p style="color: red">Valid Phone Number is required (10 digits)</p>
+          </div>
+        </div>
+        <div class="user-input-box">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            formControlName="password"
+          />
+          <div
+            *ngIf="
+              UserForm.get('password')?.invalid &&
+              (UserForm.get('password')?.dirty ||
+                UserForm.get('password')?.touched)
+            "
+          >
+            <p style="color: red">
+              Password is required (minimum 6 characters)
+            </p>
+          </div>
+        </div>
+        <div class="user-input-box">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Enter Confirm Password"
+            formControlName="confirmPassword"
+          />
+          <div
+            *ngIf="UserForm.errors?.['passwordMismatch'] && (UserForm.get('confirmPassword')?.dirty || UserForm.get('confirmPassword')?.touched)"
+          >
+            <p style="color: red">Passwords do not match</p>
+          </div>
+        </div>
+      </div>
+      <div class="gender-details-box">
+        <span class="gender-title">Gender</span>
+        <div class="gender-category">
+          <input
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+            formControlName="gender"
+          />
+          <label for="male">Male</label>
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+            formControlName="gender"
+          />
+          <label for="female">Female</label>
+          <input
+            type="radio"
+            name="gender"
+            id="other"
+            value="other"
+            formControlName="gender"
+          />
+          <label for="other">Other</label>
+        </div>
+        <div
+          *ngIf="
+            UserForm.get('gender')?.invalid &&
+            (UserForm.get('gender')?.dirty || UserForm.get('gender')?.touched)
+          "
+        >
+          <p style="color: red">Gender is required</p>
+        </div>
+      </div>
+      <div class="form-submit-btn text-center">
+        <input type="submit" value="Register" [disabled]="UserForm.invalid" />
+        <p style="color: white" class="mt-2">
+          Already Have a Acccount?
+          <a routerLink="/login"> Sign in</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
