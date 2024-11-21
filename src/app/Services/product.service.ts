@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  baseUrl: string = 'http://localhost:3000/api/product/';
+  baseUrl: string = 'https://storyshelfbackend-1.onrender.com/api/product/';
 
   constructor(private http: HttpClient) { }
   //get all product by product Id

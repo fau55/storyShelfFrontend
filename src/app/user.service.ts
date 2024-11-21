@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  baseUrl: string = 'http://localhost:3000/api/ss/user/';
+  baseUrl: string = 'https://storyshelfbackend-1.onrender.com/api/ss/user/';
 
   constructor(private http: HttpClient) { }
 
