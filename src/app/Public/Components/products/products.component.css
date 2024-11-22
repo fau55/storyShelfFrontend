@@ -1,0 +1,112 @@
+h3 {
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding-top: 10px;
+    padding-inline: 10px;
+  }
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    /* background-color: aliceblue; */
+  }
+  
+  .product .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+  }
+  .product .content {
+    width: 28%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-top: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: 0.4s;
+    /* background: rgb(247, 67, 67); */
+    /* height: 500px; */
+  }
+  .product .content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+  }
+  .product img {
+    width: 70%;
+    height: 300px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+  .product h3 {
+    font-size: 22px !important;
+    /* height: 80px; */
+  }
+  .product p {
+    text-align: center;
+    color: #b2bec3;
+    padding: 0 8px;
+  }
+  .product h6 {
+    font-size: 26px;
+    text-align: center;
+    color: #222f3e;
+    margin: 0;
+  }
+  .product a{
+      color: blue;
+      text-decoration: underline;
+      /* font-size: 12px; */
+  }
+  .product .cart-icon {
+    width: 35px;
+    height: 35px;
+    display: inline;
+    margin-bottom: 8px;
+  }
+  .product button {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .product .buy-1 {
+    background: #2183a2;
+  }
+  @media (max-width: 1000px) {
+    .product .content {
+      width: 45px;
+    }
+  }
+  @media (max-width: 750px) {
+    .product .content {
+      width: 100%;
+    }
+  }
+  .searchBox{
+    width: 100%;
+    margin: auto;
+    /* display: block !important; */
+  }
+  
+  .searchBox input{
+    width: 50%;
+    margin: auto;
+  }

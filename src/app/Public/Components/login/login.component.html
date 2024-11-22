@@ -1,0 +1,94 @@
+<div class="body">
+  <div class="bg">
+    <div class="login-box">
+      <div class="login-header">
+        <header>Login</header>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <!-- Email Input -->
+        <div class="input-box">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="Email"
+            formControlName="email"
+            aria-label="Email"
+            autocomplete="off"
+          />
+          <div
+            *ngIf="
+              loginForm.get('email')?.invalid &&
+              (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)
+            "
+          >
+            <p class="error">Please enter a valid email.</p>
+          </div>
+        </div>
+
+        <!-- Password Input with Toggle Visibility -->
+        <div class="input-box">
+          <div class="password-wrapper">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="input-field"
+              placeholder="Password"
+              formControlName="password"
+              aria-label="Password"
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              (click)="togglePasswordVisibility()"
+            >
+              {{ showPassword ? "🙈" : "👁️" }}
+            </button>
+          </div>
+          <div
+            *ngIf="
+              loginForm.get('password')?.invalid &&
+              (loginForm.get('password')?.touched ||
+                loginForm.get('password')?.dirty)
+            "
+          >
+            <p class="error">Password must be at least 6 characters.</p>
+          </div>
+        </div>
+
+        <!-- Remember Me and Forgot Password -->
+        <div class="forgot">
+          <section>
+            <input
+              type="checkbox"
+              formControlName="rememberMe"
+              id="check"
+              aria-label="Remember me"
+            />
+            <label for="check">Remember me</label>
+          </section>
+          <section>
+            <a routerLink="/forgot-password">Forgot password?</a>
+          </section>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="input-submit">
+          <button
+            class="submit-btn"
+            id="submit"
+            type="submit"
+            [disabled]="loginForm.invalid || loading"
+            [class.loading]="loading"
+          >
+            {{ loading ? "Signing In..." : "Sign In" }}
+          </button>
+        </div>
+      </form>
+
+      <!-- Sign Up Link -->
+      <div class="sign-up-link">
+        <p>Don't have an account? <a routerLink="/register">Sign Up</a></p>
+      </div>
+    </div>
+  </div>
+</div>
