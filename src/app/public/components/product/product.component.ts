@@ -3,8 +3,13 @@ import { Router } from '@angular/router';
 import { ProductService } from '../../../Services/product.service';
 import { CartService } from '../../../Services/cart.service';
 import Swal from 'sweetalert2';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { SearchProductPipe } from '../../../Pipes/search-product.pipe';
 
 @Component({
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, SearchProductPipe],
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'

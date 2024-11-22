@@ -1,12 +1,15 @@
 import { Component, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../../user.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../../Services/user.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'], // Fixed typo here

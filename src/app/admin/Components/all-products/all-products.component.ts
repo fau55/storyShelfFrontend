@@ -3,9 +3,13 @@ import { ProductService } from '../../../Services/product.service';
 //?firebase
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 //?firebase end
 
 @Component({
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   selector: 'app-all-products',
   templateUrl: './all-products.component.html',
   styleUrl: './all-products.component.css'

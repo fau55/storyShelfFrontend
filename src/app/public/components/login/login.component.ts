@@ -1,11 +1,14 @@
 import { Component, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../../../user.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../../Services/user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { timeInterval } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],

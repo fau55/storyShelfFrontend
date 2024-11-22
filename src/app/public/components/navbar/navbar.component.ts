@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../user.service';
+import { UserService } from '../../../Services/user.service';
 import Swal from 'sweetalert2';
 //?firebase
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
+import { CommonModule } from '@angular/common';
 //?firebase end
 @Component({
+  standalone: true,
+  imports : [CommonModule],
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
