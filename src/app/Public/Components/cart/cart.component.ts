@@ -4,21 +4,13 @@ import { ProductService } from '../../../Services/product.service';
 import Swal from 'sweetalert2';
 import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { UserService } from '../../../Services/user.service';
 
 @Component({
   selector: 'app-cart',
-  standalone: true,
-  providers: [CartService, ProductService],
-  imports: [FormsModule, CommonModule, HttpClientModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrls: ['./cart.component.css'],
 })
-export class CartComponent {
-
+export class CartComponent implements OnInit {
   userId: string | null = null;
   cart: any[] = [];
   subTotal: number = 0;

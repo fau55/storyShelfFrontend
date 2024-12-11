@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CartService {
 
-  baseUrl: string = 'https://storyshelfbackend-1.onrender.com/api/cart/';
+  baseUrl: string = 'https://storyshelfbackend.onrender.com/api/cart/';
 
   constructor(private http: HttpClient) { }
   //get all cart by userid

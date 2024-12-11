@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-  baseUrl: string = 'https://storyshelfbackend-1.onrender.com/api/product/';
+  baseUrl: string = 'https://storyshelfbackend.onrender.com/api/product/';
 
   constructor(private http: HttpClient) { }
   //get all product by product Id
   getAllProducts() {
-    return this.http.get(this.baseUrl + "getall")
+    return this.http.get(this.baseUrl + "get-all")
   }
   //get product by product Id
   getProductByProductId(productId: string) {

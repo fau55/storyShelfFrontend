@@ -1,22 +1,16 @@
 import { Component, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserService } from '../../../Services/user.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../../user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { timeInterval } from 'rxjs';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
   loginForm: FormGroup;
   showPassword: boolean = false;
   loading: boolean = false;
@@ -86,5 +80,4 @@ export class LoginComponent {
       });
     }
   }
-
 }

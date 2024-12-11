@@ -1,161 +1,160 @@
 <header>
-    <nav>
-      <a routerLink="/" style="text-decoration: none">
-        <div class="logo">Story Shelf</div>
-      </a>
-      <div class="menu">
-        <a href="home">Home</a>
-        <a routerLink="contact-us">Contact us</a>
-  
-        <a routerLink="about-us">About us</a>
-        <a routerLink="category">Category</a>
-        <a routerLink="product">Products</a>
-      </div>
-      <div class="register" *ngIf="!userLoggedIn">
-        <a routerLink="register">Register</a>
-        <a routerLink="login" style="margin-left: 10px">Login</a>
-      </div>
-      <div *ngIf="userLoggedIn">
-        <a routerLink="cart" class="shopping-cart">
-          <img src="../../../../assets/icons/mainCart2.png" alt="" />
-        </a>
-        <div
-          class="userIcon"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample"
-          *ngIf="!userProfile"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="80"
-            height="80"
-            fill="white"
-            class="bi bi-person-circle"
-            viewBox="0 0 16 16"
-          >
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-            <path
-              fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
-            />
-          </svg>
-        </div>
-        <img
-          src="{{ userProfile }}"
-          alt="userImage"
-          *ngIf="userProfile"
-          width="50"
-          height="50"
-          class="userProfile"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample"
-        />
-      </div>
-    </nav>
-    <!-- offcanvas  -->
-    <div
-      class="offcanvas userDetails offcanvas-start"
-      tabindex="-1"
-      id="offcanvasExample"
-      aria-labelledby="offcanvasExampleLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">User Info :</h5>
-        <button
-          type="button"
-          class="btn-close text-reset"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="card text-start">
-          <div class="imageDiv">
-            <img
-              src="../../../../assets/icons/edit-button.png"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            />
-          </div>
-          <img class="card-img-top" src="{{ userProfile }}" alt="Title" />
-          <div class="card-body">
-            <h4 class="card-title">User Name : {{ userName }}</h4>
-            <p class="card-text">Gender : {{ userGender }}</p>
-            <p class="card-text">phone No : {{ userNumber }}</p>
-            <h5 class="card-text mt-4">Email Id : {{ userEmail }}</h5>
-          </div>
-          <div class="card-footer">
-            <button
-              class="btn btn-secondary"
-              (click)="logOut()"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            >
-              Log Out
-            </button>
-          </div>
-        </div>
-      </div>
+  <nav>
+    <a routerLink="/" style="text-decoration: none">
+      <div class="logo">Story Shelf</div>
+    </a>
+    <div class="menu">
+      <a href="home">Home</a>
+      <a routerLink="contact-us">Contact us</a>
+
+      <a routerLink="about-us">About us</a>
+      <a routerLink="category">Category</a>
+      <a routerLink="product">Products</a>
     </div>
-  
-    <!-- Modal -->
-  </header>
+    <div class="register" *ngIf="!userLoggedIn">
+      <a routerLink="register">Register</a>
+      <a routerLink="login" style="margin-left: 10px">Login</a>
+    </div>
+    <div *ngIf="userLoggedIn">
+      <a routerLink="cart" class="shopping-cart">
+        <img src="../../../../assets/icons/mainCart2.png" alt="" />
+      </a>
+      <div
+        class="userIcon"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+        *ngIf="!userProfile"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="80"
+          height="80"
+          fill="white"
+          class="bi bi-person-circle"
+          viewBox="0 0 16 16"
+        >
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path
+            fill-rule="evenodd"
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+          />
+        </svg>
+      </div>
+      <img
+        src="{{ userProfile }}"
+        alt="userImage"
+        *ngIf="userProfile"
+        width="50"
+        height="50"
+        class="userProfile"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      />
+    </div>
+  </nav>
+  <!-- offcanvas  -->
   <div
-    class="modal fade"
-    id="exampleModal"
+    class="offcanvas userDetails offcanvas-start"
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
   >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edit User Profile</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">User Info :</h5>
+      <button
+        type="button"
+        class="btn-close text-reset"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="card text-start">
+        <div class="imageDiv">
+          <img
+            src="../../../../assets/icons/edit-button.png"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            data-bs-dismiss="offcanvas"
             aria-label="Close"
-          ></button>
+          />
         </div>
-        <div class="modal-body">
-          <upload-dropzone
-            [options]="options"
-            [onUpdate]="onUpdate"
-            [width]="width"
-            [height]="height"
-            upload
-            multi="false"
-          >
-          </upload-dropzone>
+        <img class="card-img-top" src="{{ userProfile }}" alt="Title" />
+        <div class="card-body">
+          <h4 class="card-title">User Name : {{ userName }}</h4>
+          <p class="card-text">Gender : {{ userGender }}</p>
+          <p class="card-text">phone No : {{ userNumber }}</p>
+          <h5 class="card-text mt-4">Email Id : {{ userEmail }}</h5>
         </div>
-        <div class="modal-footer">
+        <div class="card-footer">
           <button
-            type="button"
             class="btn btn-secondary"
-            data-bs-dismiss="modal"
+            (click)="logOut()"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           >
-            Close
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-dismiss="modal"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-            (click)="onSave()"
-          >
-            Save changes
+            Log Out
           </button>
         </div>
       </div>
     </div>
   </div>
-  
+
+  <!-- Modal -->
+</header>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User Profile</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <upload-dropzone
+          [options]="options"
+          [onUpdate]="onUpdate"
+          [width]="width"
+          [height]="height"
+          upload
+          multi="false"
+        >
+        </upload-dropzone>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+          (click)="onSave()"
+        >
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

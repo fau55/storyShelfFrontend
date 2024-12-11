@@ -1,67 +1,66 @@
 .latest-news {
-    width: 100%;
-    /* background-color: aliceblue; */
-    padding-inline: 20px;
-    padding-block: 40px;
-  
-  
-    /* text-align: center; */
-  }
-  
-  .latest-news h1{
-    text-align: center;
-    color: indianred;
-    font-weight: bolder;
-    margin-bottom: 40px;
-    text-decoration: underline;
-  }
-  .latest-news .card {
-    width: 100%;
-    padding: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    border: none;
-  }
-  
-  .latest-news .card img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .latest-news .card .first-row .user-image img {
-    width: 25px;
-    height: 25px;
-  }
-  .latest-news .card .first-row {
-    padding-block: 20px;
-    padding-inline: 20px;
-    /* border: 1px solid gainsboro; */
-  }
-  .latest-news .card .first-row h6 {
-    margin-top: 15px;
-    text-align: start;
-    font-size: 12px;
-  }
-  
-  .latest-news .card h4 {
-    color: indianred;
-    font-weight: bolder;
-    margin-bottom: 20px;
-  }
-  .latest-news .card p {
-    font-size: 14px;
-    color: rgb(186, 182, 182);
-  }
-  .latest-news .card .shop-now {
-    text-decoration: none;
-    background-color: indianred;
-    color: white;
-    padding: 10px 20px;
-    letter-spacing: 5px;
-    transition: 0.4s;
-    width: 165px;
-  }
-  .latest-news .card .shop-now:hover {
-    background: transparent;
-    border: 1px solid indianred;
-  }
-  
+  width: 100%;
+  /* background-color: aliceblue; */
+  padding-inline: 20px;
+  padding-block: 40px;
+
+
+  /* text-align: center; */
+}
+
+.latest-news h1{
+  text-align: center;
+  color: indianred;
+  font-weight: bolder;
+  margin-bottom: 40px;
+  text-decoration: underline;
+}
+.latest-news .card {
+  width: 100%;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: none;
+}
+
+.latest-news .card img {
+  width: 100%;
+  height: 100%;
+}
+
+.latest-news .card .first-row .user-image img {
+  width: 25px;
+  height: 25px;
+}
+.latest-news .card .first-row {
+  padding-block: 20px;
+  padding-inline: 20px;
+  /* border: 1px solid gainsboro; */
+}
+.latest-news .card .first-row h6 {
+  margin-top: 15px;
+  text-align: start;
+  font-size: 12px;
+}
+
+.latest-news .card h4 {
+  color: indianred;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.latest-news .card p {
+  font-size: 14px;
+  color: rgb(186, 182, 182);
+}
+.latest-news .card .shop-now {
+  text-decoration: none;
+  background-color: indianred;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+  width: 165px;
+}
+.latest-news .card .shop-now:hover {
+  background: transparent;
+  border: 1px solid indianred;
+}

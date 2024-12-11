@@ -1,23 +1,16 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../../Services/product.service';
 //?firebase
-import { UploadWidgetModule } from "@bytescale/upload-widget-angular";
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 //?firebase end
 
 @Component({
   selector: 'app-all-products',
-  standalone: true,
-  imports: [FormsModule, CommonModule,UploadWidgetModule, HttpClientModule],
   templateUrl: './all-products.component.html',
   styleUrl: './all-products.component.css'
 })
 export class AllProductsComponent {
-
 
   productName: string = '';
   productPrice: number | null = null;
@@ -161,4 +154,6 @@ export class AllProductsComponent {
   }
 
   //?firebase end
+
+
 }

@@ -1,25 +1,17 @@
 import { Component, OnDestroy } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { UserService } from '../../../Services/user.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../../user.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrls: ['./register.component.css'], // Fixed typo here
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnDestroy {
   UserForm: FormGroup;
   private unsubscribe$ = new Subject<void>();
 
@@ -36,11 +28,7 @@ export class RegisterComponent {
         email: ['', [Validators.required, Validators.email]],
         phone: [
           '',
-          [
-            Validators.required,
-            Validators.minLength(10),
-            Validators.maxLength(10),
-          ],
+          [Validators.required, Validators.minLength(10), Validators.maxLength(10)],
         ],
         gender: ['', Validators.required],
         password: ['', [Validators.required, Validators.minLength(6)]],
@@ -54,15 +42,13 @@ export class RegisterComponent {
   passwordMatchValidator(form: FormGroup) {
     const password = form.get('password');
     const confirmPassword = form.get('confirmPassword');
-    return password &&
-      confirmPassword &&
-      password.value === confirmPassword.value
+    return password && confirmPassword && password.value === confirmPassword.value
       ? null
       : { passwordMismatch: true };
   }
 
-  ngOnInit() {
-    window.scroll(0, 0);
+  ngOnInit(){
+    window.scroll(0,0)
   }
 
   // Method to register the user

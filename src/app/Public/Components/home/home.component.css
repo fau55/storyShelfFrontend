@@ -1,204 +1,204 @@
 .header {
-    height: 110vh;
-    background-color: black;
-    /* background: black; */
-    background: url("../../../../assets/pexels-polina-zimmerman-3747505.jpg");
-    background-size: cover;
-    background-position: 0px -350px;
-    font-family: sans-serif;
-    margin-top: -100px;
-  }
-  
-  .home-content {
-    background: #ebeeef;
-    /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #1D2671, #C33764); */
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #1D2671, #C33764); */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  .home-content h1 {
-    color: indianred;
-  }
-  
-  .bgBlack {
-    width: 100%;
-    height: 110vh;
-    background-color: rgba(205, 92, 92, 0.055);
-  }
-  
-  .h-txt {
-    max-width: 650px;
-    position: absolute;
-    top: 50%;
-    font-weight: 900 !important;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-  }
-  
-  .h-txt span {
-    font-size: 20px;
-    color: gray;
-    letter-spacing: 5px;
-    font-weight: 900 !important;
-  }
-  
-  .h-txt h1 {
-    color: indianred;
-    font-size: 3.5em;
-    font-weight: 500;
-  }
-  
-  .h-txt a {
-    text-decoration: none;
-    background-color: indianred;
-    color: white;
-    padding: 10px 20px;
-    letter-spacing: 5px;
-    transition: 0.4s;
-  }
-  
-  .h-txt a:hover {
-    background: transparent;
-    border: 1px solid indianred;
-  }
-  
-  .content-2 img {
-    width: 60%;
-    margin-left: 40px;
-    /* margin-top: 10px; */
-    /* height: 100%; */
-  }
-  
-  .content-2 {
-    padding: 50px;
-    /* height: 150px; */
-    color: rgb(255, 255, 255);
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
-  
-    font-weight: bolder;
-    background-color:indianred;
-  }
-  
-  .content-2 p{
-    margin-top: -10px !important;
-  }
-  
-  .content-3 .content-3-sub1 {
-    width: 100%;
-    height: 500px;
-    background-image: url("../../../../assets/content-3-bg.jpg");
-    background-size: cover;
-    padding-block: 40px;
-    border-top: 3px solid white;
-    background-position: 0px -150px;
-    /* text-align: center; */
-  }
-  
-  .content-3-sub2{
-    width: 100%;
-    height: 500px;
-    background-image: url("../../../../assets/home/sub-2.jpg");
-    background-size: cover;
-    padding-block: 40px;
-    border-top: 3px solid white;
-    background-position: 0px -150px;
-  }
-  
-  .content-3-sub3{
-    width: 100%;
-    background-color: black;
-    /* padding-block: 40px; */
-    border-top: 3px solid white;
-  }
-  .content-3-sub3 .fantasy-book{
-    height: 500px;
-    background-image: url("../../../../assets/home/fantasy-book.jpg");
-    background-size: cover;
-    /* background-position: 0px -150px; */
-  
-  }
-  
-  
-  .content-3 h4 {
-    margin-top: 80px;
-    color: rgb(109, 111, 112);
-    font-size: 26px;
-  }
-  
-  .content-3 h3 {
-    font-size: 35px;
-    font-weight: bolder;
-    color: indianred;
-    margin-block: 10px;
-  }
-  
-  .content-3 p {
-    color: rgb(109, 111, 112);
-    margin-block: 40px;
-  }
-  
-  .content-3 .shop-now {
-    text-decoration: none;
-    background-color: indianred;
-    color: white;
-    padding: 10px 20px;
-    letter-spacing: 5px;
-    transition: 0.4s;
-  }
-  
-  .content-3 .shop-now:hover {
-    background: transparent;
-    border: 1px solid indianred;
-    color: black;
-  
-  }
-  
-  .content-4{
-    width: 100%;
-    height: 500px;
-    background-image: url('../../../../assets/content-4-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0px -185px;
-    margin-block: 30px;
-    border-block: 3px solid white;
-  }
-  
-  .content-4 .white-bg{
-    padding-left: 40px;
-    width: 100%;
-    height: 500px;
-    background-color: rgba(255, 255, 255, 0.253);
-  }
-  .content-4 h1{
-    padding-top: 180px;
-    color: indianred;
-    font-weight: bolder;
-  }
-  
-  .content-4 p{
-    /* margin-left: 10px; */
-    color: rgb(109, 104, 104);
-    font-weight: 600;
-    margin-bottom: 30px;
-  }
-  
-  .content-4 .shop-now{
-    /* padding-top: 60px; */
-    text-decoration: none;
-    background-color: indianred;
-    color: white;
-    padding: 10px 20px;
-    letter-spacing: 5px;
-    transition: 0.4s;
-    /* margin-left: 30px; */
-  }
-  
-  .content-4 .shop-now:hover {
-    background: transparent;
-    border: 1px solid indianred;
-  }
+  height: 110vh;
+  background-color: black;
+  /* background: black; */
+  background: url("../../../../assets/pexels-polina-zimmerman-3747505.jpg");
+  background-size: cover;
+  background-position: 0px -350px;
+  font-family: sans-serif;
+  margin-top: -100px;
+}
+
+.home-content {
+  background: #ebeeef;
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #1D2671, #C33764); */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #1D2671, #C33764); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.home-content h1 {
+  color: indianred;
+}
+
+.bgBlack {
+  width: 100%;
+  height: 110vh;
+  background-color: rgba(205, 92, 92, 0.055);
+}
+
+.h-txt {
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  font-weight: 900 !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.h-txt span {
+  font-size: 20px;
+  color: gray;
+  letter-spacing: 5px;
+  font-weight: 900 !important;
+}
+
+.h-txt h1 {
+  color: indianred;
+  font-size: 3.5em;
+  font-weight: 500;
+}
+
+.h-txt a {
+  text-decoration: none;
+  background-color: indianred;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+}
+
+.h-txt a:hover {
+  background: transparent;
+  border: 1px solid indianred;
+}
+
+.content-2 img {
+  width: 60%;
+  margin-left: 40px;
+  /* margin-top: 10px; */
+  /* height: 100%; */
+}
+
+.content-2 {
+  padding: 50px;
+  /* height: 150px; */
+  color: rgb(255, 255, 255);
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+
+  font-weight: bolder;
+  background-color:indianred;
+}
+
+.content-2 p{
+  margin-top: -10px !important;
+}
+
+.content-3 .content-3-sub1 {
+  width: 100%;
+  height: 500px;
+  background-image: url("../../../../assets/content-3-bg.jpg");
+  background-size: cover;
+  padding-block: 40px;
+  border-top: 3px solid white;
+  background-position: 0px -150px;
+  /* text-align: center; */
+}
+
+.content-3-sub2{
+  width: 100%;
+  height: 500px;
+  background-image: url("../../../../assets/home/sub-2.jpg");
+  background-size: cover;
+  padding-block: 40px;
+  border-top: 3px solid white;
+  background-position: 0px -150px;
+}
+
+.content-3-sub3{
+  width: 100%;
+  background-color: black;
+  /* padding-block: 40px; */
+  border-top: 3px solid white;
+}
+.content-3-sub3 .fantasy-book{
+  height: 500px;
+  background-image: url("../../../../assets/home/fantasy-book.jpg");
+  background-size: cover;
+  /* background-position: 0px -150px; */
+
+}
+
+
+.content-3 h4 {
+  margin-top: 80px;
+  color: rgb(109, 111, 112);
+  font-size: 26px;
+}
+
+.content-3 h3 {
+  font-size: 35px;
+  font-weight: bolder;
+  color: indianred;
+  margin-block: 10px;
+}
+
+.content-3 p {
+  color: rgb(109, 111, 112);
+  margin-block: 40px;
+}
+
+.content-3 .shop-now {
+  text-decoration: none;
+  background-color: indianred;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+}
+
+.content-3 .shop-now:hover {
+  background: transparent;
+  border: 1px solid indianred;
+  color: black;
+
+}
+
+.content-4{
+  width: 100%;
+  height: 500px;
+  background-image: url('../../../../assets/content-4-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px -185px;
+  margin-block: 30px;
+  border-block: 3px solid white;
+}
+
+.content-4 .white-bg{
+  padding-left: 40px;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.253);
+}
+.content-4 h1{
+  padding-top: 180px;
+  color: indianred;
+  font-weight: bolder;
+}
+
+.content-4 p{
+  /* margin-left: 10px; */
+  color: rgb(109, 104, 104);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.content-4 .shop-now{
+  /* padding-top: 60px; */
+  text-decoration: none;
+  background-color: indianred;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+  /* margin-left: 30px; */
+}
+
+.content-4 .shop-now:hover {
+  background: transparent;
+  border: 1px solid indianred;
+}

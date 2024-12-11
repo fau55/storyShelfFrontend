@@ -15,12 +15,7 @@
             aria-label="Email"
             autocomplete="off"
           />
-          <div
-            *ngIf="
-              loginForm.get('email')?.invalid &&
-              (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)
-            "
-          >
+          <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
             <p class="error">Please enter a valid email.</p>
           </div>
         </div>
@@ -36,21 +31,11 @@
               aria-label="Password"
               autocomplete="off"
             />
-            <button
-              type="button"
-              class="toggle-password"
-              (click)="togglePasswordVisibility()"
-            >
-              {{ showPassword ? "🙈" : "👁️" }}
+            <button type="button" class="toggle-password" (click)="togglePasswordVisibility()">
+              {{ showPassword ? '🙈' : '👁️' }}
             </button>
           </div>
-          <div
-            *ngIf="
-              loginForm.get('password')?.invalid &&
-              (loginForm.get('password')?.touched ||
-                loginForm.get('password')?.dirty)
-            "
-          >
+          <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
             <p class="error">Password must be at least 6 characters.</p>
           </div>
         </div>
@@ -58,12 +43,7 @@
         <!-- Remember Me and Forgot Password -->
         <div class="forgot">
           <section>
-            <input
-              type="checkbox"
-              formControlName="rememberMe"
-              id="check"
-              aria-label="Remember me"
-            />
+            <input type="checkbox" formControlName="rememberMe" id="check" aria-label="Remember me" />
             <label for="check">Remember me</label>
           </section>
           <section>
@@ -80,7 +60,7 @@
             [disabled]="loginForm.invalid || loading"
             [class.loading]="loading"
           >
-            {{ loading ? "Signing In..." : "Sign In" }}
+            {{ loading ? 'Signing In...' : 'Sign In' }}
           </button>
         </div>
       </form>

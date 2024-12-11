@@ -1,23 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../../Services/user.service';
+import { UserService } from '../../../user.service';
 import Swal from 'sweetalert2';
 //?firebase
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
-import { CommonModule } from '@angular/common';
-import { UploadWidgetModule } from "@bytescale/upload-widget-angular";
-import { HttpClientModule } from '@angular/common/http';
 //?firebase end
-
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule, UploadWidgetModule, HttpClientModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
   userLoggedIn = false;
   userProfile!: any
   userName!: any
@@ -190,5 +183,4 @@ export class NavbarComponent {
       })
   }
   //?firebase end
-
 }

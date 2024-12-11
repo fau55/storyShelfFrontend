@@ -1,56 +1,55 @@
 <div class="wrapper">
-    <h1>Shopping Cart</h1>
-    <div class="Project">
-      <!-- If the cart has items -->
-      <div class="shop" *ngIf="cart?.length">
-        <div class="box" *ngFor="let item of cart">
-          <img [src]="item.productDetails?.productImage" alt="Product Image" />
-          <div class="content">
-            <h3>{{ item.productDetails?.productName }}</h3>
-            <h4>Price: ₹{{ item.productDetails?.productPrice }}</h4>
-            <p class="unit">
-              Quantity: &nbsp;
-              <input
-                type="number"
-                [(ngModel)]="item.quantity"
-                (change)="editQuantity(item.quantity, item._id)"
-                class="ps-2"
-                min="1"
-              />
-            </p>
-            <span class="btn2" (click)="removeItem(item._id)">Remove</span>
-          </div>
+  <h1>Shopping Cart</h1>
+  <div class="Project">
+    <!-- If the cart has items -->
+    <div class="shop" *ngIf="cart?.length">
+      <div class="box" *ngFor="let item of cart">
+        <img [src]="item.productDetails?.productImage" alt="Product Image" />
+        <div class="content">
+          <h3>{{ item.productDetails?.productName }}</h3>
+          <h4>Price: ₹{{ item.productDetails?.productPrice }}</h4>
+          <p class="unit">
+            Quantity: &nbsp;
+            <input
+              type="number"
+              [(ngModel)]="item.quantity"
+              (change)="editQuantity(item.quantity, item._id)"
+              class="ps-2"
+              min="1"
+            />
+          </p>
+          <span class="btn2" (click)="removeItem(item._id)">Remove</span>
         </div>
       </div>
-  
-      <!-- If the cart is empty -->
-      <div class="shop text-center" *ngIf="!cart?.length">
-        <h3>Cart Is Empty</h3>
-      </div>
-  
-      <!-- Right-bar displaying subtotal, tax, and total -->
-      <div class="right-bar" *ngIf="cart?.length">
-        <p>
-          <span>Subtotal</span>
-          <span>₹{{ subTotal }}</span>
-        </p>
-        <hr />
-        <p>
-          <span>Tax 5%</span>
-          <span>₹{{ (subTotal * 0.05).toFixed(2) }}</span>
-        </p>
-        <hr />
-        <p>
-          <span>Shipping</span>
-          <span>₹150</span>
-        </p>
-        <hr />
-        <p>
-          <span>Total</span>
-          <span>₹{{ (subTotal * 1.05 + 150).toFixed(2) }}</span>
-        </p>
-        <button class="btn" (click)="checkout()">Checkout</button>
-      </div>
+    </div>
+
+    <!-- If the cart is empty -->
+    <div class="shop text-center" *ngIf="!cart?.length">
+      <h3>Cart Is Empty</h3>
+    </div>
+
+    <!-- Right-bar displaying subtotal, tax, and total -->
+    <div class="right-bar" *ngIf="cart?.length">
+      <p>
+        <span>Subtotal</span>
+        <span>₹{{ subTotal }}</span>
+      </p>
+      <hr />
+      <p>
+        <span>Tax 5%</span>
+        <span>₹{{ (subTotal * 0.05).toFixed(2) }}</span>
+      </p>
+      <hr />
+      <p>
+        <span>Shipping</span>
+        <span>₹150</span>
+      </p>
+      <hr />
+      <p>
+        <span>Total</span>
+        <span>₹{{ (subTotal * 1.05 + 150).toFixed(2) }}</span>
+      </p>
+      <button class="btn" (click)="checkout()">Checkout</button>
     </div>
   </div>
-  
+</div>

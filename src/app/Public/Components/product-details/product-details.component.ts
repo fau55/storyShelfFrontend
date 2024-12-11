@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../Services/product.service';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 
 interface Product {
   category: string;
@@ -17,13 +15,10 @@ interface Product {
 
 @Component({
   selector: 'app-product-details',
-  standalone: true,
-  imports: [HttpClientModule, CommonModule],
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css'
+  styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent {
-
+export class ProductDetailsComponent implements OnInit {
   images: string[] = [
     '../../../../assets/81wfmy9oafl_custom-0faf8f17413857547ce59182be61cde0bc373105.jpeg',
     '../../../../assets/science-fiction book..png',
@@ -40,10 +35,10 @@ export class ProductDetailsComponent {
   constructor(
     private activeRoute: ActivatedRoute,
     private productService: ProductService
-  ) { }
+  ) {}
 
   ngOnInit() {
-    window.scroll(0, 0)
+    window.scroll(0,0)
     // Fetch productId from route parameters and load data
     this.activeRoute.params.subscribe((params) => {
       this.productId = params['productId'];
@@ -80,5 +75,4 @@ export class ProductDetailsComponent {
   getTransform() {
     return `translateX(-${this.currentImageIndex * 100}%)`;
   }
-
 }
