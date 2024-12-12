@@ -1,9 +1,15 @@
 import { Component ,AfterViewInit} from '@angular/core';
+import { NewsLetterComponent } from '../news-letter/news-letter.component';
+import { LatestNewsComponent } from '../latest-news/latest-news.component';
+import { ProductComponent } from '../product/product.component';
+import { RouterLink } from '@angular/router';
 declare var bootstrap: any;
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css',
+    standalone: true,
+    imports: [RouterLink, ProductComponent, LatestNewsComponent, NewsLetterComponent]
 })
 export class HomeComponent {
   ngOnInit() {

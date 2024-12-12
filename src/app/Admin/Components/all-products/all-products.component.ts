@@ -3,12 +3,16 @@ import { ProductService } from '../../../Services/product.service';
 //?firebase
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UploadWidgetModule } from '@bytescale/upload-widget-angular';
 //?firebase end
 
 @Component({
-  selector: 'app-all-products',
-  templateUrl: './all-products.component.html',
-  styleUrl: './all-products.component.css'
+    selector: 'app-all-products',
+    templateUrl: './all-products.component.html',
+    styleUrl: './all-products.component.css',
+    standalone: true,
+    imports: [UploadWidgetModule, ReactiveFormsModule, FormsModule]
 })
 export class AllProductsComponent {
 

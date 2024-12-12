@@ -4,11 +4,15 @@ import Swal from 'sweetalert2';
 //?firebase
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
+import { UploadWidgetModule } from '@bytescale/upload-widget-angular';
+import { RouterLink } from '@angular/router';
 //?firebase end
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css'],
+    standalone: true,
+    imports: [RouterLink, UploadWidgetModule]
 })
 export class NavbarComponent {
   userLoggedIn = false;

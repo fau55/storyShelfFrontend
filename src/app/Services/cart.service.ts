@@ -12,7 +12,7 @@ export class CartService {
   constructor(private http: HttpClient) { }
   //get all cart by userid
   getAllCart() {
-    return this.http.get(this.baseUrl + `getall`)
+    return this.http.get(this.baseUrl + `get-all`)
   }
   //get cart by userid
   getCartByUserId(userId: any) {
@@ -28,7 +28,7 @@ export class CartService {
   }
   //delete all cart 
   deleteAllCart() {
-    return this.http.get(this.baseUrl + `deleteall`)
+    return this.http.get(this.baseUrl + `delete-all`)
   }
 }
 

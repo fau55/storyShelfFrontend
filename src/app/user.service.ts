@@ -33,4 +33,16 @@ export class UserService {
     return this.http.post(this.baseUrl+ `update/profile/${userId}`, profileUrl)
   }
   
+  //method to update the user by userid
+  updateUserByUserId(userid: string) {
+    return this.http.get(this.baseUrl + 'get/all');
+  }
+  //method to delete user by userId
+  deleteUserByUserId(userid: string) {
+    return this.http.get(this.baseUrl + 'get/all');
+  }
+  //method to delete all user
+  deleteAllUserByUserId(userid: string) {
+    return this.http.get(this.baseUrl + 'get/all');
+  }
 }

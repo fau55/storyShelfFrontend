@@ -36,25 +36,23 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AdminComponent,
-    AdminPageComponent,
-    CartComponent,
-    AllUserComponent,
-    AllProductsComponent,
-    AdminDashboardComponent
-  ],
-  imports: [
-    FormsModule,
-    // firebase
-    UploadWidgetModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    //fireBase
-    CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        FormsModule,
+        // firebase
+        UploadWidgetModule,
+        provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideStorage(() => getStorage()),
+        //fireBase
+        CommonModule,
+        RouterModule.forChild(routes),
+        AdminComponent,
+        AdminPageComponent,
+        CartComponent,
+        AllUserComponent,
+        AllProductsComponent,
+        AdminDashboardComponent
+    ]
 })
 export class AdminModule { }

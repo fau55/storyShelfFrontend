@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { UserService } from '../../../user.service';
 
 @Component({
-  selector: 'app-all-user',
-  templateUrl: './all-user.component.html',
-  styleUrl: './all-user.component.css'
+    selector: 'app-all-user',
+    templateUrl: './all-user.component.html',
+    styleUrl: './all-user.component.css',
+    standalone: true
 })
 export class AllUserComponent {
 

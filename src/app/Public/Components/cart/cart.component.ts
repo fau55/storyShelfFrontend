@@ -4,11 +4,14 @@ import { ProductService } from '../../../Services/product.service';
 import Swal from 'sweetalert2';
 import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.css'],
+    standalone: true,
+    imports: [ReactiveFormsModule, FormsModule],
 })
 export class CartComponent implements OnInit {
   userId: string | null = null;

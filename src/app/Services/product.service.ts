@@ -26,6 +26,6 @@ export class ProductService {
   }
   //delete all product by product Id
   deleteAllProductByProductId(productId: string) {
-    return this.http.get(this.baseUrl + `deleteall`)
+    return this.http.get(this.baseUrl + `delete-all`)
   }
 }

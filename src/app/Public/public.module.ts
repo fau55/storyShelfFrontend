@@ -47,36 +47,34 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [
-    PublicComponent,
-    NavbarComponent,
-    FooterComponent,
-    HomeComponent,
-    ContactUsComponent,
-    AboutUsComponent,
-    RegisterComponent,
-    LoginComponent,
-    CategoryComponent,
-    ProductComponent,
-    CartComponent,
-    ProductDetailsComponent,
-    LatestNewsComponent,
-    NewsLetterComponent,
-    LandingPageComponent,
-    SearchProductPipe,
-  ],
-  imports: [
-    // firebase
-    UploadWidgetModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    //fireBase
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    imports: [
+        // firebase
+        UploadWidgetModule,
+        provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideStorage(() => getStorage()),
+        //fireBase
+        ReactiveFormsModule,
+        FormsModule,
+        CommonModule,
+        RouterModule.forChild(routes),
+        PublicComponent,
+        NavbarComponent,
+        FooterComponent,
+        HomeComponent,
+        ContactUsComponent,
+        AboutUsComponent,
+        RegisterComponent,
+        LoginComponent,
+        CategoryComponent,
+        ProductComponent,
+        CartComponent,
+        ProductDetailsComponent,
+        LatestNewsComponent,
+        NewsLetterComponent,
+        LandingPageComponent,
+        SearchProductPipe
+    ]
 })
 export class PublicModule { }
