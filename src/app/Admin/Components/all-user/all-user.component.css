@@ -17,18 +17,19 @@
    
 }
 .slide-container{
-    /* max-width: 1120px; */
     width: 100%;
-    background-color: purple;
     padding: 40px 0;
+    margin-inline: 10px;
 }
-.slide-content{
-    margin: 0 40px;
-}
+
 .card{
-    width: 320px;
+    width: 95%;
+    margin-inline: auto;
     border-radius: 25px;
+    height: 400px;
+    text-align: center;
     background-color: #fff;
+    margin-bottom: 20px;
 }
 .image-content,
 .card-content{
@@ -48,7 +49,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: #4070F4;
+    background-color: rgb(129, 17, 129);
     border-radius: 25px 25px 0 25px;
 }
 .overlay::before,
@@ -59,7 +60,7 @@
     bottom: -40px;
     height: 40px;
     width: 40px;
-    background-color:#4070F4;
+    background-color:rgb(129, 17, 129);
 }
 .overlay::after{
     border-radius: 0 25px 0 0;
@@ -79,7 +80,7 @@
     width: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #4070F4;
+    border: 4px solid rgb(129, 17, 129);
 }
 .name{
     font-size: 18px;

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,9 @@ export class ProductService {
   deleteAllProductByProductId(productId: string) {
     return this.http.get(this.baseUrl + `delete-all`)
   }
+
+  saveProduct(product:any): Observable<any> {
+    return this.http.post(this.baseUrl + 'create', product)
+  }
+
 }

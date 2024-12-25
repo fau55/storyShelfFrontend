@@ -4,12 +4,13 @@
       <div class="card-wrapper swiper-wrapper">
         <div class="row mt-5" >
           @for (user of AllUser; track user) {
-            <div class="col mt-3">
+            <div class="col-4 mt-3">
               <div class="card swiper-slide">
                 <div class="image-content">
                   <span class="overlay"></span>
                   <div class="card-image">
                     <img src={{user.profilePhoto}} alt="" class="card-img" />
+                    <!-- <img src="../../../../assets/user.jpg" alt="" class="card-img" *ngIf="!user.profilePhoto"/> -->
                   </div>
                 </div>
                 <div class="card-content my-3">

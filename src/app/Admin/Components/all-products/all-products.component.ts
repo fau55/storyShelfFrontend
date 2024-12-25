@@ -5,6 +5,7 @@ import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UploadWidgetModule } from '@bytescale/upload-widget-angular';
+import { AnyAaaaRecord } from 'node:dns';
 //?firebase end
 
 @Component({
@@ -20,6 +21,7 @@ export class AllProductsComponent {
   productPrice: number | null = null;
   productDescription: string = '';
   productCategory: string = '';
+  author: string = '';
   inStock: number | null = null;
   productTag: string[] = [];
 
@@ -35,8 +37,8 @@ export class AllProductsComponent {
   productArray: any[] = []
 
   // Options for dropdowns
-  categories: string[] = ['Advanture', 'Science-Fiction', 'Fantasy', 'Education', 'Mistry', 'Self-Help'];
-  tags: string[] = ['New', 'trending', 'Popular', 'Limited Edition'];
+  categories: string[] = ['Advanture', 'Science-Fiction', 'Fantasy', 'Education', 'Mystry', 'Self-Help','Contemporary', 'Romance', 'Historical-Fiction', 'Horror'];
+  tags: string[] = ['New Arrival', 'Trending', 'Popular', 'Limited Edition', 'Best Seller', 'Classic'];
 
   constructor(private productService: ProductService, public storage: Storage) {
     this.getAllProduct()
@@ -108,16 +110,31 @@ export class AllProductsComponent {
   //?onclick of save saving to firebase
 
   onSave() {
-    if (this.uploadImageURL !== '') {
-      // Split the image URLs by newline character
-      const imageUrls = this.uploadImageURL.split("\n");
+    const productData = {
+      productName: this.productName,
+      authorName: this.author,
+      productDescription: this.productDescription,
+      productPrice: this.productPrice,
+      category: this.productCategory,
+      stock: this.inStock,
+      tags: this.productTag.map(tag => ({ name: tag })),
+      productImages: this.showPreviewImages.map(image => ({ image_url: image })),
+    };
 
-      // Convert each URL to a file and upload to Firebase
-      imageUrls.forEach(url => {
-        this.convertUrlToFile(url);
-      });
-    }
+    console.log("product Data to Save :", productData);
+  
+    this.productService.saveProduct(productData).subscribe(
+      (response : any) => {
+        console.log('Product saved successfully:', response);
+        alert('Product saved successfully!');
+      },
+      (error: AnyAaaaRecord) => {
+        console.error('Error saving product:', error);
+        alert('Failed to save product.');
+      }
+    );
   }
+  
 
   convertUrlToFile(url: string) {
     fetch(url)

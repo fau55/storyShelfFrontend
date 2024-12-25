@@ -27,6 +27,7 @@ import { environment } from "../../Enviroment/enviroment";
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 // firebase End
 import { SearchProductPipe } from '../Pipes/search-product.pipe';
+import { CategoryProductComponent } from './components/category-product/category-product.component';
 const routes: Routes = [
   {
     path: '', component: PublicComponent,
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'category', component: CategoryComponent },
       { path: 'cart', component: CartComponent },
       { path: 'product-details/:productId', component: ProductDetailsComponent },
+      { path: 'category-product/:category', component: CategoryProductComponent },
       { path: 'product', component: ProductComponent }
     ]
   }
@@ -75,6 +77,10 @@ const routes: Routes = [
         NewsLetterComponent,
         LandingPageComponent,
         SearchProductPipe
-    ]
+    ],
+    declarations: [
+    
+    CategoryProductComponent
+  ]
 })
 export class PublicModule { }

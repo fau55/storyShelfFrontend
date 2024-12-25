@@ -1,19 +1,33 @@
-<div class="product">
-  <!-- Search Input -->
-  <div class="searchBox my-3"><input type="text" class="form-control" [(ngModel)]="search" placeholder="Search products..." /></div>
-
-  <!-- Product List -->
-  @for (product of productsArray | searchProduct: search; track product) {
+<div class="container-fluid text-center pt-5">
+  <h1>Our Products</h1>
+  <div class="product">
+    <!-- Search Input -->
+    <div class="searchBox my-3">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="search"
+        placeholder="Search products..."
+      />
+    </div>
+    <!-- Product List -->
+    @for (product of productsArray | searchProduct: search; track product) {
     <div class="content">
-      <img [src]="product.productImages[0].image_url" />
       <h3>{{ product.productName }}</h3>
+      <img [src]="product.productImages[0].image_url" />
+      <h5>Category : {{ product.category }}</h5>
       <h6>Rs.{{ product.productPrice }}</h6>
-      <h5 style="color: black;">{{ product.category }}</h5>
       <a (click)="viewDetails(product._id)">View Details</a>
       <button class="buy-1" (click)="addToCart(product)">
         Add To Cart
-        <img src="../../../../assets/icons/shopping-cart.png" class="cart-icon" alt=""/>
+        <img
+          src="../../../../assets/icons/shopping-cart.png"
+          class="cart-icon"
+          alt=""
+        />
       </button>
     </div>
-  }
+    }
+    <hr>
+  </div>
 </div>

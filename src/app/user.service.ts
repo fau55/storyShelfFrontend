@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,12 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   registerAsSeller(user: any) {
-    return this.http.post(this.baseUrl + 'register', user);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.http.post(this.baseUrl + 'register', user, httpOptions);
   }
 
   // Login user function
@@ -29,10 +34,10 @@ export class UserService {
     return this.http.get(this.baseUrl + `get/by/${userId}`);
   }
 
-  updateUserProfile(userId: String, profileUrl : any){
-    return this.http.post(this.baseUrl+ `update/profile/${userId}`, profileUrl)
+  updateUserProfile(userId: String, profileUrl: any) {
+    return this.http.post(this.baseUrl + `update/profile/${userId}`, profileUrl)
   }
-  
+
   //method to update the user by userid
   updateUserByUserId(userid: string) {
     return this.http.get(this.baseUrl + 'get/all');

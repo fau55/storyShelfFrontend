@@ -7,11 +7,11 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.css'],
-    standalone: true,
-    imports: [ReactiveFormsModule, RouterLink],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
+  standalone: true,
+  imports: [ReactiveFormsModule, RouterLink],
 })
 export class RegisterComponent implements OnDestroy {
   UserForm: FormGroup;
@@ -49,8 +49,8 @@ export class RegisterComponent implements OnDestroy {
       : { passwordMismatch: true };
   }
 
-  ngOnInit(){
-    window.scroll(0,0)
+  ngOnInit() {
+    window.scroll(0, 0)
   }
 
   // Method to register the user
@@ -64,9 +64,7 @@ export class RegisterComponent implements OnDestroy {
         password: this.UserForm.get('password')?.value,
         gender: this.UserForm.get('gender')?.value,
       };
-
-      console.log('User Registration Details', this.UserForm.value);
-
+  
       this.userService
         .registerAsSeller(user)
         .pipe(takeUntil(this.unsubscribe$))
@@ -84,7 +82,7 @@ export class RegisterComponent implements OnDestroy {
             } else {
               Swal.fire({
                 icon: 'error',
-                text: 'Oops! Something went wrong',
+                text: 'Unexpected response from the server',
                 showConfirmButton: false,
                 timer: 2000,
               });
@@ -92,9 +90,13 @@ export class RegisterComponent implements OnDestroy {
           },
           (err) => {
             console.error('Registration failed:', err);
+  
+            // Enhanced error messaging
+            const errorMessage =
+              err.error?.message || 'Oops! Something went wrong on the server.';
             Swal.fire({
               icon: 'error',
-              text: err.error?.message || 'Oops! Something went wrong',
+              text: errorMessage,
               showConfirmButton: false,
               timer: 2000,
             });
@@ -103,12 +105,13 @@ export class RegisterComponent implements OnDestroy {
     } else {
       Swal.fire({
         icon: 'error',
-        text: 'Invalid Form',
+        text: 'Invalid Form - Please check your input and try again.',
         showConfirmButton: false,
         timer: 2000,
       });
     }
   }
+  
 
   // Clean up subscriptions
   ngOnDestroy() {

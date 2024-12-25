@@ -40,9 +40,9 @@
           <div class="col-4">
             <p>Images to Upload:</p>
             @if (showPreviewImage) {
-              <div>
+              <div class="row">
                 @for (imageUrl of showPreviewImages; track imageUrl) {
-                  <div>
+                  <div class="col mt-1">
                     <img
                       [src]="imageUrl"
                       alt="Preview"
@@ -73,6 +73,19 @@
                     type="text"
                     class="form-control"
                     [(ngModel)]="productName"
+                    placeholder="Enter product name"
+                    />
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col">
+                  <p>Author</p>
+                </div>
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="author"
                     placeholder="Enter product name"
                     />
                   </div>

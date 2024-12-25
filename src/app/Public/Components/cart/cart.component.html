@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h1>Shopping Cart</h1>
+  <h4>Shopping Cart</h4>
   <div class="Project">
     <!-- If the cart has items -->
     @if (cart?.length) {
@@ -29,8 +29,8 @@
 
       <!-- If the cart is empty -->
       @if (!cart?.length) {
-        <div class="shop text-center">
-          <h3>Cart Is Empty</h3>
+        <div class="emptyCart text-center">
+          <h3>Cart Is Empty...</h3>
         </div>
       }
 

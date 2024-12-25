@@ -1,0 +1,75 @@
+<div class="container-fluid text-center mt-5">
+    <h1>Now Trending...</h1>
+    <div class="row">
+      <div
+        class="col-3"
+        *ngFor="let product of trendingProducts; let i = index"
+      >
+        <div class="card product pt-3" >
+          <h5>{{ product.productName }}</h5>
+          <img [src]="product.productImages[0].image_url" alt="Product Image" />
+          <!-- <h5 style="color: black"> Category : {{ product.category }}</h5> -->
+          <h6>Rs. {{ product.productPrice }}</h6>
+          <a (click)="viewDetails(product._id)">View Details</a>
+          <button class="buy-1" (click)="addToCart(product)">
+            Add To Cart
+            <img
+              src="../../../../assets/icons/shopping-cart.png"
+              class="cart-icon"
+              alt="Cart Icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h1 class="mt-4 mb-2 text-start ms-1">Best Seller</h1>
+    <div class="row">
+      <div
+        class="col-4"
+        *ngFor="let product of bestSellerProducts; let i = index"
+      >
+        <div class="card product pt-3" >
+          <h5>{{ product.productName }}</h5>
+          <img [src]="product.productImages[0].image_url" alt="Product Image" />
+          <!-- <h5 style="color: black"> Category : {{ product.category }}</h5> -->
+          <h6>Rs. {{ product.productPrice }}</h6>
+          <a (click)="viewDetails(product._id)">View Details</a>
+          <button class="buy-1" (click)="addToCart(product)">
+            Add To Cart
+            <img
+              src="../../../../assets/icons/shopping-cart.png"
+              class="cart-icon"
+              alt="Cart Icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h1 class="mt-4">New Arrivals...</h1>
+    <div class="row">
+      <div
+        class="col-4"
+        *ngFor="let product of trendingProducts; let i = index"
+      >
+        <div class="card product pt-3" >
+          <h5>{{ product.productName }}</h5>
+          <img [src]="product.productImages[0].image_url" alt="Product Image" />
+          <!-- <h5 style="color: black"> Category : {{ product.category }}</h5> -->
+          <h6>Rs. {{ product.productPrice }}</h6>
+          <a (click)="viewDetails(product._id)">View Details</a>
+          <button class="buy-1" (click)="addToCart(product)">
+            Add To Cart
+            <img
+              src="../../../../assets/icons/shopping-cart.png"
+              class="cart-icon"
+              alt="Cart Icon"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </div>
+  
