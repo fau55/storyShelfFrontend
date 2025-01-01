@@ -38,7 +38,7 @@ export class AllProductsComponent {
 
   // Options for dropdowns
   categories: string[] = ['Advanture', 'Science-Fiction', 'Fantasy', 'Education', 'Mystry', 'Self-Help','Contemporary', 'Romance', 'Historical-Fiction', 'Horror'];
-  tags: string[] = ['New Arrival', 'Trending', 'Popular', 'Limited Edition', 'Best Seller', 'Classic'];
+  tags: string[] = ['New Arrival', 'Trending', 'Popular', 'Limited Edition', 'Best Seller', 'Classic', "Today's Deal", 'Featured' ];
 
   constructor(private productService: ProductService, public storage: Storage) {
     this.getAllProduct()

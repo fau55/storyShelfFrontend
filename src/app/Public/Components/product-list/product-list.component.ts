@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CartService } from '../../../Services/cart.service';
 import Swal from 'sweetalert2';
+import { SeeAllComponent } from '../see-all/see-all.component';
 
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SeeAllComponent],
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
@@ -17,6 +18,7 @@ export class ProductListComponent {
   productArray: any[] = [];
   trendingProducts: any[] = [];
   bestSellerProducts: any[] = [];
+  newArrivalProducts: any[] = [];
 
   constructor(
     private productService: ProductService,
@@ -34,6 +36,7 @@ export class ProductListComponent {
         this.productArray = res.Product;
         this.filterTrendingProducts();
         this.filterBestSellerProducts();
+        this.filterNewArrivalProducts()
       },
       (error) => {
         console.error('Error fetching products:', error);
@@ -50,6 +53,11 @@ export class ProductListComponent {
   filterBestSellerProducts(): void {
     this.bestSellerProducts = this.productArray.filter((product: any) =>
       product.tags.some((tag: any) => tag.name == 'Best Seller')
+    );
+  }
+  filterNewArrivalProducts(): void {
+    this.newArrivalProducts = this.productArray.filter((product: any) =>
+      product.tags.some((tag: any) => tag.name == 'New Arrival')
     );
   }
 

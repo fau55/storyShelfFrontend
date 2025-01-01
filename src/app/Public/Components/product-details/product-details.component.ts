@@ -73,6 +73,8 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
+  
+
   changeImage(index: number, event: Event) {
     event.preventDefault();
     this.currentImageIndex = index;
@@ -82,7 +84,7 @@ export class ProductDetailsComponent implements OnInit {
     return `translateX(-${this.currentImageIndex * 100}%)`;
   }
 
-  addToCart(product: any) {
+  addToCart() {
     const userId = sessionStorage.getItem('userId');
     if (!userId) {
       Swal.fire({
@@ -97,9 +99,9 @@ export class ProductDetailsComponent implements OnInit {
 
     // Create a product object with a valid quantity
     const newProduct = {
-      productId: product._id,
+      productId: this.productId,
       quantity: 1, // Set a default quantity of 1
-      priceAtPurchase: product.productPrice
+      priceAtPurchase: this.product?.productPrice
     };
 
     // Call the cart service to add the product to the cart by userId

@@ -4,35 +4,51 @@ header {
   left: 0;
   z-index: 99;
   width: 100%;
-  /* background-color: rgba(255, 255, 255, 0.225); */
-  background-color: rgba(205, 92, 92, 0.8);
-  /* border-top: 2px solid white; */
   border-bottom: 1px solid white;
 }
 
 nav {
   width: 100%;
-  height: 70px;
+  /* height: 70px; */
   color: rgb(242, 184, 184);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .logo {
-  font-size: 2em;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu a {
+.logo a {
+  font-family: "Diphylleia", serif !important;
+  font-weight: bolder;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-size: 2em;
+  color: indianred !important;
+}
+.row-1 {
+  border: 1px solid gainsboro;
+}
+
+.row-2 {
+  padding-block: 15px;
+}
+.row-2 a {
+  padding-inline: 8px;
   text-decoration: none;
-  color: rgb(255, 252, 252);
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
+  color: black;
+  font-family: "Diphylleia", serif !important;
+}
+.menu a {
+  font-family: "Diphylleia", serif !important;
+  text-decoration: none;
   position: relative;
+  color: indianred;
+  padding-inline: 10px;
+  border-left: 1px solid rgb(226, 57, 57);
 }
 
 .menu a:before {
@@ -42,63 +58,98 @@ nav {
   left: 0;
   width: 0%;
   height: 100%;
-  border-bottom: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid indianred;
   transition: 0.4s linear;
 }
 .menu a:hover:before {
   width: 90%;
 }
 
-.register a {
-  text-decoration: none;
-  background-color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  color: indianred;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: 0.4s;
-}
-.register a:hover {
-  color: white;
-  background: indianred;
-  border: 1px solid white;
-}
-.shopping-cart {
-  position: relative;
-  left: 45%;
-  top: 2.8px;
-}
-.shopping-cart img {
-  width: 40px;
-  height: 40px;
-}
-.userIcon {
-display: inline !important;
-  position: relative;
-  left: 55%;
-}
-
-.userDetails{
+.userDetails {
   /* z-index: 100 !important; */
   background-color: white;
 }
-.card img{
+.card img {
   width: 60%;
   margin: auto;
 }
-.imageDiv img{
-width: 30px;
-height: 30px;
+.imageDiv img {
+  width: 30px;
+  height: 30px;
 }
 
-.imageDiv{
+.imageDiv {
   text-align: end;
   align-items: end;
 }
-.userProfile{
+.userProfile {
   border-radius: 100%;
   position: relative;
   left: 55%;
   border: 2px solid white;
+}
+
+.form-group {
+  padding-block: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.form-group input {
+  width: 300px;
+  padding-inline: 20px;
+  padding-block: 10px;
+  border-radius: 20px 0px 0px 20px;
+  border-left: 1px solid gainsboro;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  border-right: none;
+}
+
+.form-group input:focus {
+  border: none;
+  outline: none;
+  border-left: 1px solid gainsboro !important;
+  border-top: 1px solid gainsboro !important;
+  border-bottom: 1px solid gainsboro !important;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.form-group select {
+  color: rgb(95, 95, 95);
+  border: 1px solid gainsboro !important;
+  padding-inline: 10px 10px;
+  padding-block: 10.8px;
+  /* border-radius: 0px 20px 20px 0px; */
+}
+.form-group select:focus {
+  outline: none;
+  border: 1px solid gainsboro;
+}
+.form-group .searchIcon {
+  background-color: indianred;
+  padding: 10.2px 20px 10.2px 15px;
+  border-radius: 0px 20px 20px 0px;
+  cursor: pointer;
+}
+.form-group .searchIcon:hover {
+  background-color: rgba(205, 92, 92, 0.351);
+}
+.form-group .searchIcon img {
+  width: 20px;
+  height: 20px;
+}
+.divIcons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 20px;
+}
+.divIcons img {
+  cursor: pointer;
+  width: 25px;
 }

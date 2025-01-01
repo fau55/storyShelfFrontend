@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <h4>Shopping Cart</h4>
+  <h4 >Shopping Cart</h4>
   <div class="Project">
     <!-- If the cart has items -->
-    @if (cart?.length) {
+    @if (cart.length) {
       <div class="shop">
         @for (item of cart; track item) {
           <div class="box">
@@ -28,14 +28,14 @@
       }
 
       <!-- If the cart is empty -->
-      @if (!cart?.length) {
+      @if (!cart.length) {
         <div class="emptyCart text-center">
           <h3>Cart Is Empty...</h3>
         </div>
       }
 
       <!-- Right-bar displaying subtotal, tax, and total -->
-      @if (cart?.length) {
+      @if (cart.length) {
         <div class="right-bar">
           <p>
             <span>Subtotal</span>

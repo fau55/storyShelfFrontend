@@ -1,37 +1,27 @@
-.product img {
+.trending-products .product img {
   width: 70%;
   margin: 10px auto;
   height: 250px;
 }
 
-.product h3 {
+.trending-products .product h3 {
   font-size: 22px !important;
   /* height: 80px; */
 }
-.product p {
+.trending-products .product p {
   text-align: center;
   color: #b2bec3;
   padding: 0 8px;
+  margin-bottom: 0px !important;
 }
-.product h6 {
-  font-size: 26px;
+.trending-products .product h6 {
+  /* font-size: 26px; */
   text-align: center;
   color: #222f3e;
   margin: 0;
+  margin-top: 10px;
 }
-.product a {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-  /* font-size: 12px; */
-}
-.product .cart-icon {
-  width: 35px;
-  height: 35px;
-  display: inline;
-  margin-bottom: 8px;
-}
-.product button {
+.trending-products .product a {
   text-align: center;
   font-size: 20px;
   color: #fff;
@@ -41,24 +31,193 @@
   outline: none;
   cursor: pointer;
   margin-top: 5px;
-}
-.product .buy-1 {
   background: #e03d40;
+  position: absolute;
+  bottom: 0px;
 }
 
-.card{
-    width: 90%;
-    margin-inline: auto;
-    margin-block: 15px;
-    border-radius: 0px;
-    text-align: center;
+.trending-products .product .rating {
+  border: none;
+  background-color: white;
+}
+.trending-products .product .rating span {
+  padding: 4px 8px;
+  color: white;
+  background-color: #e03d40;
+  border-radius: 25%;
 }
 
-h5, h1{
-    text-align: center;
-    color: indianred;
-    font-weight: bolder;
-    margin-bottom: 10px;
-    text-decoration: underline;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.trending-products .card {
+  width: 98%;
+  margin-inline: auto;
+  margin-block: 15px;
+  border-radius: 0px;
+  text-align: center;
+  height: 530px;
+  /* padding-bottom: 20px; */
+}
+
+.trending-products h5,
+h1 {
+  text-align: center;
+  color: indianred;
+  /* font-weight: bolder; */
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.best-seller .card .product-image {
+  width: 100%;
+  margin: auto;
+  height: 400px;
+}
+
+.best-seller .card {
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-block: 10px;
+  text-align: start;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 600px;
+}
+.best-seller .card .iconDiv {
+  display: flex;
+}
+.best-seller .card .iconDiv img {
+  width: 100px;
+  position: absolute;
+  top: -22px;
+  left: -4px;
+}
+
+.best-seller .card .iconDiv h6 {
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  color: white !important;
+}
+.best-seller .card p {
+  color: #a7a8a9;
+  margin-bottom: 0px !important;
+}
+
+.best-seller .card .buy-1 {
+  border: none;
+  background-color: indianred;
+  color: white;
+  font-family: "Diphylleia", serif !important;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 10px;
+  
+}
+
+.best-seller .card .cart-icon {
+  width: 25px;
+  margin-bottom: 4px;
+}
+
+.new-arrivals.section-container {
+  max-width: 100%;
+  margin: auto;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.new-arrivals.section-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.new-arrivals .product-list-container {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.new-arrivals .product-list-container::-webkit-scrollbar {
+  display: none;
+  color: #ffffff;
+}
+.new-arrivals .product-list {
+  display: flex;
+  flex-direction: row;
+}
+.new-arrivals .product-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid gainsboro;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background: #fff;
+}
+
+.new-arrivals .product-card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 30px 30px 0px 0px;
+}
+.new-arrivals .product-card .product-name {
+  margin-bottom: 0.3rem !important;
+  color: #9d9d9d;
+}
+
+.new-arrivals .product-card .product-rating {
+  box-shadow: none;
+  width: auto;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.new-arrivals .product-card .starImgNum {
+  border-radius: 6px;
+  background: indianred;
+  padding: 1px 7px 1px 5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.new-arrivals .product-card .starImgNum span.starImage {
+  color: #fff;
+  position: relative;
+  top: -4px;
+}
+
+.new-arrivals .product-card .starImgNum span.starNum {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+}
+.new-arrivals .product-card .desk-review-dot {
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  height: 4px;
+  width: 4px;
+  background-color: #ccc;
+  position: relative;
+  margin: 0 0 0 6px;
+}
+
+.new-arrivals .product-card .starCount {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: indianred;
+  text-transform: capitalize;
+}

@@ -5,14 +5,15 @@ import Swal from 'sweetalert2';
 import { UploadWidgetConfig, UploadWidgetOnUpdateEvent } from "@bytescale/upload-widget";
 import { Storage, ref, uploadBytesResumable, getDownloadURL } from "@angular/fire/storage";
 import { UploadWidgetModule } from '@bytescale/upload-widget-angular';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 //?firebase end
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css'],
-    standalone: true,
-    imports: [RouterLink, UploadWidgetModule]
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css'],
+  standalone: true,
+  imports: [RouterLink, UploadWidgetModule, CommonModule]
 })
 export class NavbarComponent {
   userLoggedIn = false;
@@ -30,7 +31,7 @@ export class NavbarComponent {
   friendpic: any;
   //?firebase end
 
-  constructor(private userService: UserService, public storage: Storage) {
+  constructor(private userService: UserService, public storage: Storage, private router: Router) {
     this.getUserInfo()
   }
 
@@ -70,7 +71,28 @@ export class NavbarComponent {
     });
   }
 
+  toCart() {
+    if (this.userLoggedIn) {
+      this.router.navigate(['/cart'])
+    }
+    else {
+      this.router.navigate(['/login'])
 
+    }
+  }
+
+  toWishList() {
+    if (this.userLoggedIn) {
+      this.router.navigate(['/wishList'])
+    }
+    else {
+      this.router.navigate(['/login'])
+
+    }
+  }
+  toUserProfile() {
+    this.router.navigate(['/login'])
+  }
   //?firebase
   // image upload code, configuration and logic..
   // for more configurations visit : https://www.bytescale.com/docs/upload-widget/angular#configuration
